@@ -1,0 +1,29 @@
+{
+    // Default interpreter for this workspace (used by Python files and recommended for notebooks)
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+
+    // Tell the "Python Environments" extension this folder uses the .venv
+    // (without this it reports "No Python environment is set" -> "Invalid Python interpreter")
+    "python-envs.defaultEnvManager": "ms-python.python:venv",
+
+    // Auto-activate the venv in new terminals
+    "python.terminal.activateEnvironment": true,
+
+    // Run notebooks from their own folder so relative paths like 'speech.txt' resolve
+    "jupyter.notebookFileRoot": "${fileDirname}",
+
+    // IntelliSense / autocomplete (Pylance)
+    "python.languageServer": "Pylance",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.indexing": true,
+    // Index deeper into big packages so submodules/classes like
+    // langchain_community.document_loaders.TextLoader show up in suggestions
+    "python.analysis.packageIndexDepths": [
+        { "name": "langchain", "depth": 4, "includeAllSymbols": true },
+        { "name": "langchain_community", "depth": 4, "includeAllSymbols": true },
+        { "name": "langchain_core", "depth": 4, "includeAllSymbols": true },
+        { "name": "langchain_text_splitters", "depth": 3, "includeAllSymbols": true }
+    ],
+    "editor.quickSuggestions": { "other": "on", "comments": "off", "strings": "off" },
+    "editor.suggestOnTriggerCharacters": true
+}
