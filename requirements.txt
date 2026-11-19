@@ -14,3 +14,5 @@ langchain_huggingface
 chromadb
 jiter<0.19
 streamlit
+pydantic
+pydantic[email]
